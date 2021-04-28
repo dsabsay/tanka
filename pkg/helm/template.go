@@ -15,7 +15,7 @@ import (
 // template` command
 func (h ExecHelm) Template(name, chart string, opts TemplateOpts) (manifest.List, error) {
 	args := []string{name, chart,
-		"--values", "-", // values from stdin
+		"--include-crds", "--values", "-", // values from stdin
 	}
 	args = append(args, opts.Flags()...)
 
